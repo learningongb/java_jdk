@@ -20,5 +20,11 @@ public class Main {
         fullstackDeveloper.doFrontendWork();
 
         fullstack2.doBackendWork();
+
+        // В идентификатор типа Developer записать объект Frontender
+        // и вызывается метод doFrontendWork()
+
+        Developer developer = new Frontender("Kirill", 21);
+        ((Frontender) developer).doFrontendWork();
     }
 }

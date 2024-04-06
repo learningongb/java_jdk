@@ -8,7 +8,7 @@ public class Frontender extends Developer implements Backendable, Frontendable {
 
     @Override
     public void doFrontendWork() {
-        System.out.println("Good frontend work!!!");
+        System.out.println(this.name + ", Good frontend work!!!");
     }
 
     Frontender(String name, int age) {
