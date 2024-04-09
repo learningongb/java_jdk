@@ -21,7 +21,7 @@ public class Employers {
      * @param category - категория телефона
      * @param number - номер телефона
      */
-    public void addEmployer(String name, String tabNumber, int experience, String category, String number) {
+    public void add(String name, String tabNumber, int experience, String category, String number) {
         employers.add(new Employer(name, tabNumber, experience, category, number));
     }
 
@@ -31,7 +31,7 @@ public class Employers {
      * @param tabNumber - таб. номер
      * @param experience - стаж
      */
-    public void addEmployer(String name, String tabNumber, int experience) {
+    public void add(String name, String tabNumber, int experience) {
         employers.add(new Employer(name, tabNumber, experience));
     }
 
@@ -71,20 +71,22 @@ public class Employers {
         return null;
     }
 
-    public String getTelephoneNumber(String name) {
+    public String getPhoneNumber(String name) {
         Employer employer = findEmployer(name);
         if (employer != null)
             return employer.getPhones();
         return "";
     }
 
-    public String getEmployerByTelephone(String number) {
-        List<Employer> result = new ArrayList<>();
-        for (Employer employer : employers) {
-            if (employer.hasTelephone(number))
-                result.add(employer);
-        }
-        return result.toString();
+    /**
+     * Возвращает новый экземпляр Employers, отфильтрованный по номеру телефона
+     * @param number номер телефона
+     * @return отфильтрованный экземпляр Employers
+     */
+    public Employers getEmployerByPhone(String number) {
+        return new Employers(employers.stream()
+                .filter(employer -> employer.hasPhone(number))
+                .collect(Collectors.toList()));
     }
 
     /**

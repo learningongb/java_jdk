@@ -7,12 +7,12 @@ public class Main {
 
         System.out.println("*******************************************************");
         System.out.println("Добавление сотрудников в справочник");
-        employers.addEmployer("Иванов Иван Иванович", "0001", 15, "Рабочий", "8499010101");
+        employers.add("Иванов Иван Иванович", "0001", 15, "Рабочий", "8499010101");
         employers.addPhone("0001", "Мобильный", "+7987012345");
-        employers.addEmployer("Петров Василий Николаевич", "0002", 15);
+        employers.add("Петров Василий Николаевич", "0002", 15);
         employers.addPhone("0002", "Мобильный", "+7987001122");
-        employers.addEmployer("Николаев Игорь Васильевич", "0003", 12, "Рабочий", "8499010101");
-        employers.addEmployer("Иванов Иван Иванович", "0004", 33, "Рабочий", "8499555555");
+        employers.add("Николаев Игорь Васильевич", "0003", 12, "Рабочий", "8499010101");
+        employers.add("Иванов Иван Иванович", "0004", 33, "Рабочий", "8499555555");
 
         System.out.println("Все сотрудники:");
         System.out.println(employers);
@@ -30,6 +30,10 @@ public class Main {
         System.out.println("*******************************************************");
         System.out.println("Поиск по табельному номеру 0003");
         System.out.println(employers.findEmployer("0003"));
+
+        System.out.println("*******************************************************");
+        System.out.println("Поиск по номеру телефона 8499010101");
+        System.out.println(employers.getEmployerByPhone("8499010101"));
 
 
     }

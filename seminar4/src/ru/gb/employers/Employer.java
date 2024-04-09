@@ -54,7 +54,7 @@ public class Employer {
         return null;
     }
 
-    public boolean hasTelephone(String number) {
+    public boolean hasPhone(String number) {
         return (getPhone(number) != null);
     }
 
